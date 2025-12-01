@@ -1,0 +1,57 @@
+# configs/default.yaml
+
+# AIS signal parameters
+ais:
+  bit_rate: 9600
+  sample_rate: 96000
+  bt_product: 0.4
+  modulation_index: 0.5
+
+# Channel parameters
+channel:
+  max_doppler_hz: 3800.0
+  max_delay_samples: 100
+  snr_range_db: [-5.0, 20.0]
+  amplitude_range: [0.5, 1.5]
+
+# Collision parameters
+collision:
+  num_sources: 2
+  overlap_ratio_range: [0.3, 1.0]
+  sir_range_db: [-10.0, 10.0]
+  allow_partial_overlap: true
+
+# Model parameters (reduced for 16GB GPU)
+model:
+  encoder_type: standard
+  encoder_dim: 128
+  separator_layers: 4
+  separator_heads: 4
+  num_sources: 2
+  num_sampling_steps: 10
+  decode_bits: false
+
+# Training parameters
+training:
+  batch_size: 4
+  num_epochs: 100
+  learning_rate: 1e-4
+  weight_decay: 0.01
+  grad_clip: 1.0
+
+  # Loss weights
+  flow_weight: 1.0
+  reconstruction_weight: 0.1
+  consistency_weight: 0.1
+
+# Data parameters
+data:
+  train_size: 50000
+  val_size: 5000
+  pregenerate: false
+
+# Other
+device: cuda
+checkpoint_dir: checkpoints
+use_wandb: false
+project_name: floss-ais

@@ -1,0 +1,18 @@
+# configs/large_gpu.yaml
+# For GPUs with 40GB+ VRAM (A100, etc.)
+
+defaults:
+  - default
+
+model:
+  encoder_dim: 512
+  separator_layers: 6
+  separator_heads: 8
+
+training:
+  batch_size: 32
+  num_epochs: 100
+
+data:
+  train_size: 100000
+  val_size: 10000

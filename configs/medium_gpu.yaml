@@ -1,0 +1,18 @@
+# configs/medium_gpu.yaml
+# For GPUs with 24GB VRAM (A10, 3090, 4090, etc.)
+
+defaults:
+  - default
+
+model:
+  encoder_dim: 384
+  separator_layers: 6
+  separator_heads: 8
+
+training:
+  batch_size: 16
+  num_epochs: 100
+
+data:
+  train_size: 50000
+  val_size: 5000
