@@ -33,7 +33,7 @@ model:
 
 # Training parameters
 training:
-  batch_size: 4
+  batch_size: 6
   num_epochs: 100
   learning_rate: 1e-4
   weight_decay: 0.01
@@ -46,8 +46,8 @@ training:
 
 # Data parameters
 data:
-  train_size: 50000
-  val_size: 5000
+  train_size: 5000
+  val_size: 500
   pregenerate: false
 
 # Other

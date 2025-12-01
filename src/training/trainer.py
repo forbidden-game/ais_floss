@@ -360,7 +360,7 @@ class Trainer:
         # Extract model config
         model_config = {
             'encoder_type': 'standard' if self.model.encoder.__class__.__name__ == 'IQEncoder' else 'multiscale',
-            'encoder_dim': self.model.encoder.encoder[-1].num_features,
+            'encoder_dim': self.model.encoder.out_dim,  # Use out_dim attribute
             'num_sources': self.model.num_sources,
             'separator_layers': len(self.model.separator.vector_field.layers),
             'separator_heads': self.model.separator.vector_field.layers[0].attn.num_heads,
